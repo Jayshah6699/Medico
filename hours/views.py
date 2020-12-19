@@ -8,3 +8,6 @@ def intern(request):
 
 def doctor(request):
     return render(request, 'hours/doctor.html')
+
+def message(request):
+    return render(request, 'hours/message.html')
