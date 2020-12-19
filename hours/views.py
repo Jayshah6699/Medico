@@ -1,7 +1,23 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'hours/index.html')
+    message = "Please select if you are a doctor, volunteer, or would like to see the calendar."
+    label_links = (
+        ("I'm a doctor", 'doctor'),
+        ("I'm an intern", 'intern'),
+        ("See calendar", 'calendar')
+    ) 
+
+
+    return _menu(request, message, label_links)
+
+def _menu(request, message, label_links):
+    context = {
+        'message': message,
+        'label_links': label_links
+    }
+    
+    return render(request, 'hours/_menu.html', context)
 
 def intern(request):
     return render(request, 'hours/intern.html')
@@ -14,3 +30,5 @@ def message(request):
 
 def calendar(request):
     return render(request, 'hours/calendar.html')
+
+
