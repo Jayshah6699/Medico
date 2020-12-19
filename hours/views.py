@@ -21,6 +21,14 @@ def departments(request):
 
     return _menu(request, message, label_links)
 
+def message(request):
+    message = "Congrats! You have scheduled a 6:00AM shift at the Operating Room on 12/22/20"
+    label_links = (
+        ('Back to home', 'index'),
+    )
+
+    return _menu(request, message, label_links)
+
 def _menu(request, message, label_links):
     context = {
         'message': message,
@@ -34,9 +42,6 @@ def intern(request):
 
 def doctor(request):
     return render(request, 'hours/doctor.html')
-
-def message(request):
-    return render(request, 'hours/message.html')
 
 def calendar(request):
     return render(request, 'hours/calendar.html')
