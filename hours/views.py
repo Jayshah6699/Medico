@@ -11,3 +11,6 @@ def doctor(request):
 
 def message(request):
     return render(request, 'hours/message.html')
+
+def calendar(request):
+    return render(request, 'hours/calendar.html')
