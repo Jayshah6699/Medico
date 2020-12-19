@@ -11,6 +11,16 @@ def index(request):
 
     return _menu(request, message, label_links)
 
+def departments(request):
+    message = "Please select which department you would like to view the calendar for."
+    label_links = (
+        ('Emergency Room', 'index'),
+        ('Operating Room', 'index'),
+        ('Acute Care Unit', 'index')
+    )
+
+    return _menu(request, message, label_links)
+
 def _menu(request, message, label_links):
     context = {
         'message': message,
