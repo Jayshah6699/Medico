@@ -5,3 +5,6 @@ def index(request):
 
 def intern(request):
     return render(request, 'hours/intern.html')
+
+def doctor(request):
+    return render(request, 'hours/doctor.html')
