@@ -8,18 +8,10 @@
 
 
 <h3>Departments</h3>
+{% for department in all_departments %}
 <div class="card" style="width: 18rem; height: 80px;">
-    <div class="card-body">
-      Emergency Room
-    </div>
+  <div class="card-body">
+    {{ department }}
+  </div>
 </div>
-<div class="card" style="width: 18rem; height: 80px;">
-    <div class="card-body">
-      Operating Room
-    </div>
-</div>
-<div class="card" style="width: 18rem; height: 80px;">
-    <div class="card-body">
-      Wound Care Clinic
-    </div>
-</div>
+{% endfor %}

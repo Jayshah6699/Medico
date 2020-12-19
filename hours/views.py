@@ -54,9 +54,13 @@ def doctor(request):
             return redirect('doctor')
     
     else:
-        form = DepartmentForm()
 
-    return render(request, 'hours/doctor.html', {'form': form})
+        context = {
+            'form': DepartmentForm(),
+            'all_departments': Department.objects.all()
+        }
+
+    return render(request, 'hours/doctor.html', context)
 
 def calendar(request):
     return render(request, 'hours/calendar.html')
